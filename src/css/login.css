@@ -1,0 +1,180 @@
+/* تنظیمات کلی صفحه */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.bg {
+  background-color: rgb(23, 24, 35);
+}
+
+/* استایل کارت ورود و ثبت‌نام */
+.auth-card {
+  background-color: rgb(36, 37, 51);
+  color: whitesmoke;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  max-width: 90%;
+  margin-top: 12%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* عنوان صفحه */
+.auth-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* لیبل فیلدها */
+.auth-label {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* فیلدهای ورودی */
+.auth-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #171823;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* باکس رمز عبور با آیکون */
+.password-wrapper {
+  position: relative;
+}
+
+/* دکمه‌های فرم */
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.login-btn {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.signup-btn {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.auth-btn:hover {
+  background-color: #1e4bb8;
+}
+
+/* دکمه‌های ورود با شبکه‌های اجتماعی */
+.oauth-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.github-btn {
+  background-color: #333;
+  color: #fff;
+}
+
+.google-btn {
+  background-color: #db4437;
+  color: #fff;
+}
+
+.oauth-btn:hover {
+  opacity: 0.8;
+}
+
+/* لینک‌های داخل فرم */
+.auth-link {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* چک‌باکس قوانین */
+.auth-terms {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.auth-terms input {
+  margin-right: 5px;
+}
+
+/* خط جداکننده */
+.auth-divider {
+  margin: 20px 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* فوتر */
+.auth-footer {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* ** 📌 استایل‌های ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .auth-card {
+    width: 120vh;
+    height: 100vh;
+    border-radius: 20px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .auth-title {
+    font-size: 20px;
+  }
+
+  .auth-input {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .auth-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .oauth-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
