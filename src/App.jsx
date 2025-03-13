@@ -7,7 +7,7 @@ import Navbar from "./components/navbar.jsx";
 
 function App() {
   return (
-    <div className=" w-100% h-100vh overflow-hidden">
+    <div className=" w-100% h-100vh ">
       <Router>
         <Navbar />
         <Routes>

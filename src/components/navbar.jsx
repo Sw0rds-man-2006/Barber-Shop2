@@ -1,27 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const navbar = () => {
+
+const Navbar = () => {
   const navigate = useNavigate();
-  const handleNavigate = () => {
-    navigate("/panel");
-  };
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // مقدار پیش‌فرض ورود به سیستم
+
   return (
-    <>
-      <div className=" w-100vw h-8vh bg-gradient-to-r from-emerald-900 via-green-600 to-teal-500">
-        <div className="m-0 p3 w-90% flex h-100% box-border justify-center mx-auto text-center justify-between">
-          <div>
+    <div className="w-full h-16 bg-gradient-to-r from-emerald-900 via-green-600 to-teal-500 flex justify-center items-center">
+      <div className="w-11/12 flex justify-between items-center mx-auto">
+        {/* دکمه ورود یا پنل کاربری */}
+        <div>
+          {!isLoggedIn ? (
             <button
-              onClick={handleNavigate}
-              className="bg-transparent color-white rounded-3 p2 p-x4 loginbtn cursor-pointer"
+              onClick={() => navigate("/authentication")}
+              className="bg-transparent text-white rounded-lg px-4 py-2 border border-white cursor-pointer transition hover:bg-white hover:text-green-600"
             >
               ثبت نام / ورود
             </button>
-          </div>
-          <div> right</div>
+          ) : (
+            <button
+              onClick={() => navigate("/panel")}
+              className="bg-transparent text-white rounded-lg px-4 py-2 border border-white cursor-pointer transition hover:bg-white hover:text-green-600"
+            >
+              پنل کاربری
+            </button>
+          )}
         </div>
+        <div className="text-white">لوگو یا منو</div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default navbar;
+export default Navbar;

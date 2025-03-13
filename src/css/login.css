@@ -1,12 +1,20 @@
 /* تنظیمات کلی صفحه */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
 }
 
 .bg {
   background-color: rgb(23, 24, 35);
 }
+
+@font-face {
+  font-family: vazir;
+  src: url("../stores/Vazir-Medium.ttf");
+}
+* {
+  font-family: vazir;
+}
+
 
 /* استایل کارت ورود و ثبت‌نام */
 .auth-card {
