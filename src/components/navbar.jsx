@@ -6,8 +6,8 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // مقدار پیش‌فرض ورود به سیستم
 
   return (
-    <div className="w-full h-16 bg-gradient-to-r from-emerald-900 via-green-600 to-teal-500 flex justify-center items-center">
-      <div className="w-11/12 flex justify-between items-center mx-auto">
+    <div className="w-full h-60px bg-gradient-to-r from-emerald-900 via-green-600 to-teal-500 flex justify-center items-center">
+      <div className="w-90% flex justify-between items-center mx-auto">
         {/* دکمه ورود یا پنل کاربری */}
         <div>
           {!isLoggedIn ? (

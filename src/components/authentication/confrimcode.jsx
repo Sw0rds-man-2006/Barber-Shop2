@@ -1,5 +1,4 @@
-import useAuthStore from "../stores/Authentication.js";
-import "../css/login.css";
+import useAuthStore from "../../stores/Authentication.js";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 

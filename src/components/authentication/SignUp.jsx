@@ -1,5 +1,4 @@
-import useAuthStore from "../stores/Authentication.js";
-import "../css/login.css";
+import useAuthStore from "../../stores/Authentication.js";
 import { useRef } from "react";
 
 const Signup = () => {
@@ -70,7 +69,7 @@ const Signup = () => {
 
         <div className="flex m-3">
           <span> i'm a barber </span>
-          <input type="CheckBox" className="ml3" ref={IsBarber} />
+          <input type="CheckBox" className="ml3" required ref={IsBarber} />
         </div>
 
         <button className="auth-btn signup-btn" onClick={registerUser}>

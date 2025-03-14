@@ -1,5 +1,5 @@
-import useAuthStore from "../stores/Authentication.js";
-import "../css/login.css";
+import useAuthStore from "../../stores/Authentication";
+import "../../css/login.css";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 
@@ -7,14 +7,14 @@ const Login = () => {
   const { setAuthPage, apiBaseUrl } = useAuthStore();
   const navigate = useNavigate(); // استفاده از useNavigate برای تغییر مسیر
 
-  const email = useRef(null);
+  const phone_number = useRef(null);
   const password = useRef(null);
 
   function loginUser(event) {
     event.preventDefault(); // جلوگیری از رفرش شدن صفحه
 
     const data = {
-      email: email.current.value,
+      phone_number: phone_number.current.value,
       password: password.current.value,
     };
 
@@ -47,14 +47,14 @@ const Login = () => {
     <div className="auth-card mx-auto my-5%">
       <h2 className="auth-title">Log in</h2>
       <form>
-        <label className="auth-label" htmlFor="email">
-          Email
+        <label className="auth-label" htmlFor="number">
+          Phone number
         </label>
         <input
           className="auth-input"
-          ref={email}
-          type="email"
-          id="loginemail"
+          ref={phone_number}
+          type="phone_number"
+          id="loginphone_number"
         />
 
         <label className="auth-label" htmlFor="password">

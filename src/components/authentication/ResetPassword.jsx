@@ -1,5 +1,4 @@
-import useAuthStore from "../stores/Authentication.js";
-import "../css/login.css";
+import useAuthStore from "../../stores/Authentication.js";
 import { useRef } from "react";
 
 const ResetPassword = () => {

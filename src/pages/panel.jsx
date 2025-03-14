@@ -1,58 +1,75 @@
 import React, { useState } from "react";
-import Getlocation from "../components/getlocation";
-import TimeSender from "../components/timesender.jsx";
+import Getlocation from "../components/panel/getlocation.jsx";
+import Datepicker from "../components/panel/datepicker.jsx";
+import ImageUploader from "../components/panel/imageuploader.jsx";
 
-const panel = () => {
+const Panel = () => {
   const [storeName, setStoreName] = useState("");
   const [storeDescription, setStoreDescription] = useState("");
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
+  const [location, setLocation] = useState({});
+  const [imageData, setImageData] = useState(null);
 
-  const handleStoreNameChange = (e) => {
-    setStoreName(e.target.value);
-  };
-
-  const handleStoreDescriptionChange = (e) => {
-    setStoreDescription(e.target.value);
+  const submit = () => {
+    const formdata = {
+      storeName: storeName,
+      storeDescription: storeDescription,
+      startTime: startTime,
+      endTime: endTime,
+      location: location,
+      imageData: imageData,
+    };
+    console.log(formdata);
   };
 
   return (
-    <div className="bg-gray-1 p-6">
-      <div className=" max-w-md bg-white shadow-lg rounded-lg overflow-hidden  w-full mx-auto">
-        <Getlocation />
-        <div className="mx-auto w-80%">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text my-3 text-right block text-gray-700">
-                نام فروشگاه
-              </span>
+    <div className="bg-gray-100 p-6 min-h-screen flex justify-center items-center">
+      <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden w-full p-6">
+        {/* ارسال تابع setLocation به Getlocation */}
+        <Getlocation setLocationData={setLocation} />
+
+        <div className="w-90% mx-auto">
+          <div className="mb-4 box-border">
+            <label className="block text-gray-700 font-medium mb-2">
+              نام فروشگاه
             </label>
             <input
               type="text"
-              className="input input-bordered box-border mb-3 w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               value={storeName}
-              onChange={handleStoreNameChange}
+              onChange={(e) => setStoreName(e.target.value)}
               required
             />
           </div>
 
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text mb-3 text-right block text-gray-700">
-                توضیحات فروشگاه
-              </span>
+          <div className="mb-4 box-border">
+            <label className="block text-gray-700 font-medium mb-2">
+              توضیحات فروشگاه
             </label>
             <textarea
-              className="textarea textarea-bordered box-border mb-3 w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+              className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
               value={storeDescription}
-              onChange={handleStoreDescriptionChange}
+              onChange={(e) => setStoreDescription(e.target.value)}
               rows={3}
             />
           </div>
         </div>
 
-        <TimeSender />
+        <ImageUploader setImageData={setImageData} />
+
+        {/* ارسال توابع setStartTime و setEndTime به Datepicker */}
+        <Datepicker setdate={setStartTime} setdate2={setEndTime} />
+
+        <button
+          onClick={submit}
+          className="w-full bg-blue-500 text-white p-3 rounded-md mt-4 hover:bg-blue-600 transition duration-200"
+        >
+          ارسال اطلاعات
+        </button>
       </div>
     </div>
   );
 };
 
-export default panel;
+export default Panel;

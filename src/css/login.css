@@ -15,7 +15,6 @@ body {
   font-family: vazir;
 }
 
-
 /* استایل کارت ورود و ثبت‌نام */
 .auth-card {
   background-color: rgb(36, 37, 51);
@@ -25,7 +24,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   width: 400px;
   max-width: 90%;
-  margin-top: 12%;
+  margin-top: 100px;
   text-align: center;
   transition: all 0.3s ease;
 }
